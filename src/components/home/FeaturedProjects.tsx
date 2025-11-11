@@ -31,7 +31,7 @@ export function FeaturedProjects() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
-              <Link to="/projects">
+              <Link to={`/projects/${project.id}`}>
                 <motion.div
                   className="relative group overflow-hidden rounded-lg aspect-[4/3] cursor-pointer"
                   whileHover={{ scale: 1.02 }}

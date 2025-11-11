@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, type MouseEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { projects, Project } from '../data/projects';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { ParallaxHero } from '../components/ParallaxHero';
@@ -11,7 +12,7 @@ type LayoutMode = 'grid' | 'masonry';
 
 export function Projects() {
   const [filter, setFilter] = useState<FilterCategory>('all');
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  // Removed modal selection — projects now navigate to a full detail page
   const [layoutMode, setLayoutMode] = useState<LayoutMode>('grid');
 
   const filteredProjects = filter === 'all'
@@ -127,11 +128,11 @@ export function Projects() {
                   transition={{ delay: index * 0.05, duration: 0.3 }}
                   className={layoutMode === 'masonry' ? 'break-inside-avoid' : ''}
                 >
-                  <motion.div
-                    className="relative group overflow-hidden rounded-lg aspect-[4/3] cursor-pointer bg-white shadow-md"
-                    whileHover={{ scale: 1.02, y: -5 }}
-                    onClick={() => setSelectedProject(project)}
-                  >
+                  <Link to={`/projects/${project.id}`}>
+                    <motion.div
+                      className="relative group overflow-hidden rounded-lg aspect-[4/3] cursor-pointer bg-white shadow-md"
+                      whileHover={{ scale: 1.02, y: -5 }}
+                    >
                     <ImageWithFallback
                       src={project.image}
                       alt={project.title}
@@ -156,7 +157,8 @@ export function Projects() {
                         View Details
                       </span>
                     </motion.div>
-                  </motion.div>
+                    </motion.div>
+                  </Link>
                 </motion.div>
               ))}
             </motion.div>
@@ -164,68 +166,7 @@ export function Projects() {
         </div>
       </section>
 
-      {/* Project Detail Modal */}
-      <AnimatePresence>
-        {selectedProject && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedProject(null)}
-          >
-            <motion.div
-              className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-              initial={{ scale: 0.9, y: 20 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 20 }}
-              onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}
-            >
-              <div className="relative h-[400px]">
-                <ImageWithFallback
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-full object-cover"
-                />
-                <button
-                  onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
-              <div className="p-8">
-                <h2 className="text-[#3B755F] mb-4">{selectedProject.title}</h2>
-                <div className="flex flex-wrap gap-4 mb-6 text-sm text-gray-600">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="w-4 h-4 text-[#3B755F]" />
-                    <span>{selectedProject.location}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-[#3B755F]" />
-                    <span>{selectedProject.year}</span>
-                  </div>
-                </div>
-                <p className="text-gray-600 mb-6">{selectedProject.description}</p>
-                
-                {selectedProject.challenges && (
-                  <div className="mb-6">
-                    <h3 className="text-[#1E1E1E] mb-2">Challenges</h3>
-                    <p className="text-gray-600">{selectedProject.challenges}</p>
-                  </div>
-                )}
-                
-                {selectedProject.results && (
-                  <div>
-                    <h3 className="text-[#1E1E1E] mb-2">Results</h3>
-                    <p className="text-gray-600">{selectedProject.results}</p>
-                  </div>
-                )}
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Project details are now full-page; modal removed. */}
     </>
   );
 }

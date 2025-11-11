@@ -13,7 +13,7 @@ export const videoTestimonials: VideoTestimonial[] = [
     name: 'Jennifer & Michael Torres',
     role: 'Residential Client',
     // thumbnail: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800',
-    thumbnail: '/assets/images/videos/vid1.jpg',
+    thumbnail: '/assets/images/videos/vid1.JPG',
   // videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', // Sample video
   // Use a leading slash for public assets and include the file extension
   videoUrl: 'https://youtu.be/kH9S6GY_Weo', // Sample video (public folder)

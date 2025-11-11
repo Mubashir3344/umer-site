@@ -5,17 +5,34 @@ const beforeAfterProjects = [
   {
     id: 1,
     // before: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800',
-  before: '/assets/images/videos/Before1.jpg',
+  before: '/assets/images/BA/B1.jpeg',
     // after: 'https://images.unsplash.com/photo-1667859626967-544340ba847f?w=800',
-  after: '/assets/images/Magboulevarddubaisouth/d650a6e1-38cf-4a8f-a1cf-e885a1592625.JPG',
+  after: '/assets/images/BA/A1.jpeg',
     title: 'Modern Garden Transformation',
   },
-  {
+
+   {
     id: 2,
     // before: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800',
-  before: '/assets/images/videos/Before2.jpg',
+  before: '/assets/images/BA/B3.jpeg',
     // after: 'https://images.unsplash.com/photo-1627590919493-9dc6f72b0b08?w=800',
-  after: '/assets/images/Aura2tilalalghaff/025c7e58-27dd-48ae-9392-8893e1e4a06b.jpg',
+  after: '/assets/images/BA/A3.jpeg',
+    title: 'Outdoor Living Upgrade',
+  },
+   {
+    id: 3,
+    // before: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800',
+  before: '/assets/images/BA/B4.jpeg',
+    // after: 'https://images.unsplash.com/photo-1627590919493-9dc6f72b0b08?w=800',
+  after: '/assets/images/BA/A4.jpeg',
+    title: 'Modern Garden Transformation',
+  },
+    {
+    id: 4,
+    // before: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800',
+  before: '/assets/images/BA/B2.jpeg',
+    // after: 'https://images.unsplash.com/photo-1627590919493-9dc6f72b0b08?w=800',
+  after: '/assets/images/BA/A2.jpeg',
     title: 'Backyard Paradise',
   },
 ];
