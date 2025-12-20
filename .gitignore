@@ -15,3 +15,7 @@ build/
 # editor folders
 .vscode/
 .idea/
+
+# large files
+*.zip
+build.zip
