@@ -108,7 +108,7 @@ export function Contact() {
                     <div>
                       <h3 className="text-[#1E1E1E] mb-1">Location</h3>
                       <p className="text-gray-600">
-                        UAE
+                        Office#284 The Bristol Hotel behind 818 Police Station Barracks - near Al Muraqqabat - Al Muraqqabat - Deira - Dubai
                       </p>
                     </div>
                   </div>
