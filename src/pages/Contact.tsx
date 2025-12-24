@@ -125,7 +125,7 @@ export function Contact() {
                     </motion.div>
                     <div>
                       <h3 className="text-[#1E1E1E] mb-1">Phone</h3>
-                      <p className="text-gray-600">+971552651662</p>
+                      <p className="text-gray-600">+971 55 650 9425</p>
                     </div>
                   </div>
                 </HoverCard>
