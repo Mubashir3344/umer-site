@@ -53,12 +53,13 @@ export function Header() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2 group relative z-50">
-              <motion.div
+              <motion.img
+                src="/assets/images/logo/landscaping.png"
+                alt="Green Space Landscapes"
+                className="w-10 h-10 object-contain"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
-              >
-                <Leaf className="w-8 h-8 text-[#3B755F]" />
-              </motion.div>
+              />
               <span className={`uppercase tracking-wider transition-colors ${
                 isScrolled ? 'text-[#1E1E1E]' : 'text-white'
               }`}>

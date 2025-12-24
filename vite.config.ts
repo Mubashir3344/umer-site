@@ -52,6 +52,25 @@
     build: {
       target: 'esnext',
       outDir: 'build',
+      minify: 'terser',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'radix-ui': ['@radix-ui/react-dialog', '@radix-ui/react-select', '@radix-ui/react-tabs'],
+            'react-router': ['react-router-dom'],
+            'motion': ['motion/react'],
+          },
+        },
+      },
+      terserOptions: {
+        compress: {
+          drop_console: true,
+        },
+      },
+      cssCodeSplit: true,
+      sourcemap: false,
+      reportCompressedSize: false,
+      chunkSizeWarningLimit: 1000,
     },
     server: {
       port: 3000,

@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 import { Toaster } from './components/ui/sonner';
 import { Header } from './components/layout/Header';
@@ -31,6 +31,18 @@ function ScrollToTopOnMount() {
   return null;
 }
 
+// Loading fallback component
+function LoadingFallback() {
+  return (
+    <div className="flex items-center justify-center min-h-[60vh]">
+      <div className="text-center">
+        <div className="w-12 h-12 border-4 border-[#3B755F] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-gray-600">Loading...</p>
+      </div>
+    </div>
+  );
+}
+
 function AppContent() {
   const location = useLocation();
 
@@ -44,7 +56,7 @@ function AppContent() {
       
       <main className="flex-1">
         <AnimatePresence mode="wait">
-          <Suspense fallback={<div className="p-8 text-center">Loading…</div>}>
+          <Suspense fallback={<LoadingFallback />}>
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -56,7 +68,8 @@ function AppContent() {
               <Route path="/faq" element={<FAQ />} />
               <Route path="/cost-calculator" element={<CostCalculator />} />
               <Route path="/seasonal-calendar" element={<SeasonalCalendar />} />
-              <Route path="*" element={<Home />} />
+              {/* Catch all - redirect unknown routes to home */}
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </Suspense>
         </AnimatePresence>

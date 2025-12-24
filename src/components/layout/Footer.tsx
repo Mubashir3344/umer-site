@@ -43,7 +43,11 @@ export function Footer() {
           {/* Column 1: Brand */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <Leaf className="w-8 h-8 text-[#A4C2A5]" />
+              <img 
+                src="/assets/images/logo/landscaping.png" 
+                alt="Green Space Landscapes"
+                className="w-10 h-10 object-contain"
+              />
               <span className="uppercase tracking-wider">Green Space Landscapes</span>
             </div>
             <p className="text-gray-400 mb-4">
