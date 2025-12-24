@@ -62,11 +62,6 @@
           },
         },
       },
-      terserOptions: {
-        compress: {
-          drop_console: true,
-        },
-      },
       cssCodeSplit: true,
       sourcemap: false,
       reportCompressedSize: false,
