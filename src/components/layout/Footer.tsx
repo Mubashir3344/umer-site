@@ -56,7 +56,7 @@ export function Footer() {
             <div className="space-y-2 text-sm text-gray-400">
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4 text-[#A4C2A5]" />
-                <span>Office#284 The Bristol Hotel behind 818 Police Station Barracks - near Al Muraqqabat - Al Muraqqabat - Deira - Dubai</span>
+                  <span>Office No. 284 - Blackyard Hotel Management - One Person Company - Deira - Al Muraqgabat</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 text-[#A4C2A5]" />
